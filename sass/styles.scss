@@ -1,0 +1,450 @@
+$st-color-base:  #333;
+$st-color-white: #fff;
+
+$st-color-base-dark: darken($st-color-base, 10%);
+$st-color-white-dark: darken($st-color-white, 10%);
+
+$st-color-white-transp: transparentize($st-color-white, .25);
+
+$st-gutter:             1rem;
+$st-gutter-sm: $st-gutter*.5;
+$st-gutter-lg: $st-gutter*2;
+$st-gutter-xl: $st-gutter*5;
+
+$st-screen-md:   1024px;
+$st-screen-sm:    768px;
+$st-screen-xs:    480px;
+
+$st-radius-round: 50%;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+body {
+    font-family: 'raleway-regular';
+    font-size: 1rem;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'sanfrancisco-heavy';
+}
+
+h1 {
+    font-size: 6rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+p {
+    + p {
+        margin-top: $st-gutter;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: $st-color-base;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+        color: $st-color-base-dark;
+    }
+}
+
+@font-face {
+    font-family: 'raleway-light';
+    src: url('../fonts/Raleway-Light.woff2') format('woff2'),
+        url('../fonts/Raleway-Light.woff') format('woff');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'raleway-regular';
+    src: url('../fonts/Raleway-Regular.woff2') format('woff2'),
+        url('../fonts/Raleway-Regular.woff') format('woff');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'sanfrancisco-heavy';
+    src: url('../fonts/SanFranciscoDisplay-Heavy.woff2') format('woff2'),
+        url('../fonts/SanFranciscoDisplay-Heavy.woff') format('woff');
+    font-style: normal;
+}
+
+.st-u-text--right {
+    text-align: right;
+}
+
+.st-u-gap--top-lg {
+    margin-top: $st-gutter-lg;
+}
+
+.st-u-gap--top-xl {
+    margin-top: $st-gutter-xl;
+}
+
+.st-c-container {
+    max-width: 70em;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.st-c-site-logo {
+    padding: $st-gutter-sm;
+    text-align: center;
+
+    img {
+        height: 2rem;
+    }
+}
+
+.st-c-site-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-family: 'raleway-light';
+
+    a {
+        display: block;
+        padding: $st-gutter-sm;
+        color: $st-color-base;
+        text-decoration: none;
+
+        &.active,
+        &:hover {
+            text-decoration: line-through;
+        }
+    }
+}
+
+
+
+.st-c-section {
+    position: relative;
+    min-height: 100vh;
+    padding: $st-gutter-lg $st-gutter;
+
+    @media (min-width: $st-screen-sm) {
+        padding: $st-gutter-xl;
+    }
+
+    > .st-c-container {
+        display: flex;
+    }
+
+    .st-c-section__header {
+        max-width: 28rem;
+    }
+}
+
+.st-c-section__title {
+    margin-bottom: $st-gutter-lg;
+    font-size: 3rem;
+    text-align: center;
+
+    @media (min-width: $st-screen-xs) {
+        font-size: 4rem;
+        text-align: left;
+    }
+}
+
+.st-c-section__pattern {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    z-index: 1;
+
+    @media (max-width: $st-screen-sm) {
+        display: none;
+    }
+}
+
+.st-c-section--hero {
+    position: relative;
+    background: url('../images/bg-hero-01.jpg') center center no-repeat;
+    background-size: cover;
+
+    .st-c-section__header {
+        background-color: $st-color-white-transp;
+
+        @media (min-width: $st-screen-sm) {
+            position: absolute;
+            top: 50%;
+            right: $st-gutter;
+            transform: translateY(-50%);
+            width: 28rem;
+            height: 28rem;
+            line-height: 1.2;
+            border-radius: $st-radius-round;
+        }
+
+        .st-c-section__title {
+            @media (min-width: $st-screen-sm) {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}
+
+.st-c-section--features {
+    display: flex;
+    align-items: center;
+
+    > .st-c-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        flex-grow: 1;
+    }
+
+    .st-c-box {
+        text-align: center;
+
+        @media (min-width: $st-screen-sm + 1) {
+            flex: 0 0 20%;
+        }
+
+        &:not(:first-child) {
+            margin-top: $st-gutter-lg;
+
+            @media (min-width: $st-screen-sm + 1) {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+.st-c-section--affordable {
+    background: url('../images/bg-hero-02.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+.st-c-section--foldable {
+    background: url('../images/bg-hero-03.jpg') center center no-repeat;
+    background-size: cover;
+
+    > .st-c-container {
+        justify-content: flex-end;
+    }
+}
+
+.st-l-site-content--about {
+    .st-c-section {
+        background: url('../images/bg-hero-04.jpg') center center no-repeat;
+        background-size: cover;        
+    }
+}
+
+.st-l-site-content--shop {
+    .st-c-section {
+        padding: 0;
+    }
+}
+
+.st-c-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 1rem;
+    height: 1rem;
+    fill: currentColor;
+}
+
+.st-c-btn {
+    padding: $st-gutter-sm $st-gutter;
+    color: $st-color-base;
+    font-size: 1rem;
+    font-family: 'sanfrancisco-heavy';
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 2px solid transparent;
+    transition: all .2s ease-in-out;
+}
+
+.st-c-btn--lg {
+    padding: $st-gutter;
+    font-size: 1.4rem;
+}
+
+.st-c-btn--white {
+    position: relative;
+    z-index: 2;
+    color: $st-color-white;
+    text-shadow: 1px 1px 1px $st-color-base;
+    border-color: $st-color-white;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $st-color-base;
+        text-shadow: none;
+        background-color: $st-color-white;
+    }
+}
+
+.st-c-btn--black {
+    position: relative;
+    z-index: 2;
+    color: $st-color-base;
+    border-color: $st-color-base;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $st-color-white;
+        text-shadow: none;
+        background-color: $st-color-base;
+    }
+}
+
+.st-c-btn--round {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $st-gutter-sm;
+    border-radius: $st-radius-round;
+}
+
+.st-c-form {
+    &:not(:first-child) {
+        margin-top: $st-gutter;
+    }    
+}
+
+.st-c-form-group {
+    &:not(:first-child) {
+        margin-top: $st-gutter;
+    }
+}
+
+.st-c-control-label {
+    display: block;
+    color: $st-color-base;
+}
+
+.st-c-form-control {
+    width: 100%;
+    font-size: 1rem;
+    padding: $st-gutter-sm;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $st-color-base;
+}
+
+textarea {
+    &.st-c-form-control {
+        border: 1px solid $st-color-base;
+    }
+}
+
+.st-c-product {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: $st-screen-sm) {
+        flex-direction: column;
+    }
+}
+
+.st-c-product__gallery {
+    position: relative;
+    flex-grow: 1;
+
+    .st-c-controls {
+        position: absolute;
+        top: 50%;
+        tranform: translateY(-50%);
+    }
+
+    .st-c-controls--right {
+        right: 1rem;
+    }
+
+    .st-c-controls--left {
+        left: 1rem;
+    }
+}
+
+.st-c-product__info {
+    max-width: 28rem;
+    padding: $st-gutter-lg;
+
+    @media (max-width: $st-screen-sm) {
+        max-width: 100%;
+    }
+
+    strong {
+        font-weight: bold;
+    }
+}
+
+.st-c-product__price {
+    font-size: 2rem;
+}
+
+.st-l-site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 3rem;
+    background-color: $st-color-white;
+
+    @media (max-width: $st-screen-xs) {
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+    }
+}
+
+.st-l-site-footer {
+    position: relative;
+    padding: 12rem $st-gutter $st-gutter $st-gutter;
+    text-align: center;
+
+    ul {
+        list-style: none;
+
+        + ul {
+            margin-top: $st-gutter;
+        }
+
+        > li {
+            display: inline-block;
+            margin: $st-gutter-sm $st-gutter;
+        }
+    }
+
+    .st-c-btn--round {
+        width: 2rem;
+        height: 2rem;
+        color: $st-color-white;
+        background-color: $st-color-base;
+    }
+}
