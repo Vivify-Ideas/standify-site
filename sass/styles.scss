@@ -76,22 +76,22 @@ a {
 
 @font-face {
     font-family: 'raleway-light';
-    src: url('../fonts/Raleway-Light.woff2') format('woff2'),
-        url('../fonts/Raleway-Light.woff') format('woff');
+    src: url('https://vivify-ideas.github.io/standify-site/fonts/Raleway-Light.woff2') format('woff2'),
+        url('https://vivify-ideas.github.io/standify-site/fonts/Raleway-Light.woff') format('woff');
     font-style: normal;
 }
 
 @font-face {
     font-family: 'raleway-regular';
-    src: url('../fonts/Raleway-Regular.woff2') format('woff2'),
-        url('../fonts/Raleway-Regular.woff') format('woff');
+    src: url('https://vivify-ideas.github.io/standify-site/fonts/Raleway-Regular.woff2') format('woff2'),
+        url('https://vivify-ideas.github.io/standify-site/fonts/Raleway-Regular.woff') format('woff');
     font-style: normal;
 }
 
 @font-face {
     font-family: 'sanfrancisco-heavy';
-    src: url('../fonts/SanFranciscoDisplay-Heavy.woff2') format('woff2'),
-        url('../fonts/SanFranciscoDisplay-Heavy.woff') format('woff');
+    src: url('https://vivify-ideas.github.io/standify-site/fonts/SanFranciscoDisplay-Heavy.woff2') format('woff2'),
+        url('https://vivify-ideas.github.io/standify-site/fonts/SanFranciscoDisplay-Heavy.woff') format('woff');
     font-style: normal;
 }
 
@@ -129,6 +129,11 @@ a {
     text-transform: uppercase;
     font-family: 'raleway-light';
 
+    @media (min-width: $st-screen-md) {
+        flex-grow: 1;
+        margin-left: -150px;
+    }
+
     a {
         display: block;
         padding: $st-gutter-sm;
@@ -141,8 +146,6 @@ a {
         }
     }
 }
-
-
 
 .st-c-section {
     position: relative;
@@ -186,7 +189,7 @@ a {
 
 .st-c-section--hero {
     position: relative;
-    background: url('../images/bg-hero-01.jpg') center center no-repeat;
+    background: url('https://vivify-ideas.github.io/standify-site/images/bg-hero-01.jpg') center center no-repeat;
     background-size: cover;
 
     .st-c-section__header {
@@ -209,6 +212,14 @@ a {
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
+            }
+        }
+
+        > p {
+            @media (min-width: $st-screen-sm) {
+                position: absolute;
+                left: 1rem;
+                bottom: 5rem;
             }
         }
     }
@@ -243,12 +254,12 @@ a {
 }
 
 .st-c-section--affordable {
-    background: url('../images/bg-hero-02.jpg') center center no-repeat;
+    background: url('https://vivify-ideas.github.io/standify-site/images/bg-hero-02.jpg') center center no-repeat;
     background-size: cover;
 }
 
 .st-c-section--foldable {
-    background: url('../images/bg-hero-03.jpg') center center no-repeat;
+    background: url('https://vivify-ideas.github.io/standify-site/images/bg-hero-03.jpg') center center no-repeat;
     background-size: cover;
 
     > .st-c-container {
@@ -258,7 +269,7 @@ a {
 
 .st-l-site-content--about {
     .st-c-section {
-        background: url('../images/bg-hero-04.jpg') center center no-repeat;
+        background: url('https://vivify-ideas.github.io/standify-site/images/bg-hero-04.jpg') center center no-repeat;
         background-size: cover;        
     }
 }
@@ -266,6 +277,7 @@ a {
 .st-l-site-content--shop {
     .st-c-section {
         padding: 0;
+        min-height: 0;
     }
 }
 
@@ -297,14 +309,12 @@ a {
     position: relative;
     z-index: 2;
     color: $st-color-white;
-    text-shadow: 1px 1px 1px $st-color-base;
     border-color: $st-color-white;
 
     &:hover,
     &:focus,
     &:active {
         color: $st-color-base;
-        text-shadow: none;
         background-color: $st-color-white;
     }
 }
@@ -411,7 +421,6 @@ textarea {
 
 .st-l-site-header {
     display: flex;
-    justify-content: space-between;
     align-items: stretch;
     height: 3rem;
     background-color: $st-color-white;
