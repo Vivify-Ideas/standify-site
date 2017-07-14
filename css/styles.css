@@ -126,6 +126,7 @@ a {
   background-size: cover; }
   .st-c-section--hero .st-c-section__header {
     padding: 2rem;
+    text-align: center;
     background-color: #fff; }
     @media (min-width: 768px) {
       .st-c-section--hero .st-c-section__header {
@@ -160,6 +161,7 @@ a {
           margin-top: 0; } }
 
 .st-c-section--affordable {
+  padding-bottom: 10rem;
   background: url("https://vivify-ideas.github.io/standify-site/images/bg-hero-02.jpg") center center no-repeat;
   background-size: cover; }
 
@@ -173,9 +175,13 @@ a {
   background: url("https://vivify-ideas.github.io/standify-site/images/bg-hero-04.jpg") center center no-repeat;
   background-size: cover; }
 
-.st-l-site-content--shop .st-c-section {
-  padding: 0;
-  min-height: 0; }
+.st-l-site-content--shop {
+  max-width: 1280px;
+  margin-right: auto;
+  margin-left: auto; }
+  .st-l-site-content--shop .st-c-section {
+    padding: 0;
+    min-height: 0; }
 
 .st-c-icon {
   display: inline-block;
@@ -263,6 +269,8 @@ textarea.st-c-form-control {
     right: 1rem; }
   .st-c-product__gallery .st-c-controls--left {
     left: 1rem; }
+  .st-c-product__gallery img {
+    width: 100%; }
 
 .st-c-product__info {
   max-width: 28rem;
@@ -303,5 +311,27 @@ textarea.st-c-form-control {
     height: 2rem;
     color: #fff;
     background-color: #333; }
+
+.flex-direction-nav {
+  list-style: none; }
+  .flex-direction-nav a {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3rem;
+    height: 3rem;
+    background-color: #fff;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 1rem;
+    overflow: hidden;
+    text-indent: -100%; }
+  .flex-direction-nav .flex-prev {
+    left: 1rem;
+    background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 23.1 43.4'><polygon points='21.7 43.4 0 21.7 21.7 0 23.1 1.4 2.8 21.7 23.1 42 21.7 43.4'/></svg>"); }
+  .flex-direction-nav .flex-next {
+    right: 1rem;
+    background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 23.1 43.4'><polygon points='1.4 0 23.1 21.7 1.4 43.4 0 42 20.3 21.7 0 1.4 1.4 0'/></svg>"); }
 
 /*# sourceMappingURL=styles.css.map */
