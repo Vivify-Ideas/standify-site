@@ -16,6 +16,27 @@ $st-screen-xs:    480px;
 
 $st-radius-round: 50%;
 
+.tictail_add_to_cart_button {
+    position: relative;
+    z-index: 2;
+    padding: 1rem;
+    color: $st-color-base;
+    font-size: 1.4rem;
+    font-family: 'sanfrancisco-heavy';
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 2px solid $st-color-base;
+    transition: all .2s ease-in-out;
+  
+    &:hover, 
+    &:focus,
+    &:active {
+        color: $st-color-white;
+        text-shadow: none;
+        background-color: $st-color-base;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -94,6 +115,28 @@ a {
     font-style: normal;
 }
 
+/** Ultra Light */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 100;
+  src: url("https://vivify-ideas.github.io/standify-site/fonts/sanfranciscodisplay-ultralight-webfont.woff");
+}
+
+/** Thin */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 200;
+  src: url("https://vivify-ideas.github.io/standify-site/fonts/sanfranciscodisplay-thin-webfont.woff");
+}
+
+/** Regular */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://vivify-ideas.github.io/standify-site/fonts/sanfranciscodisplay-regular-webfont.woff");
+}
+
+
 .st-u-text--right {
     text-align: right;
 }
@@ -104,6 +147,10 @@ a {
 
 .st-u-gap--top-xl {
     margin-top: $st-gutter-xl;
+}
+
+.st-u-gap--bottom {
+    margin-top: $st-gutter;
 }
 
 .st-c-container {
@@ -194,12 +241,12 @@ a {
     .st-c-section__header {
         padding: $st-gutter-lg;
         text-align: center;
-        background-color: $st-color-white;
+        background-color: transparentize($st-color-white, .25);
 
         @media (min-width: $st-screen-sm) {
             position: absolute;
             top: 50%;
-            left: $st-gutter;
+            right: $st-gutter;
             transform: translateY(-50%);
             width: 23rem;
             text-align: right;
@@ -284,6 +331,7 @@ a {
 }
 
 .st-c-btn {
+    display: inline-block;
     padding: $st-gutter-sm $st-gutter;
     color: $st-color-base;
     font-size: 1rem;
@@ -417,6 +465,15 @@ textarea {
     font-size: 2rem;
 }
 
+.price_tag {
+    font-family: "San Francisco";
+    font-weight: 400;
+
+    > span {
+        font-weight: 100;
+    }
+}
+
 .st-l-site-header {
     display: flex;
     align-items: stretch;
@@ -465,7 +522,8 @@ textarea {
         transform: translateY(-50%);
         width: 3rem;
         height: 3rem;
-        background-color: $st-color-white;
+        color: $st-color-white;
+        background-color: transparentize($st-color-white, .5);
         border-radius: $st-radius-round;
         background-repeat: no-repeat;
         background-position: center center;
@@ -476,11 +534,11 @@ textarea {
 
     .flex-prev {
         left: $st-gutter;
-        background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 23.1 43.4'><polygon points='21.7 43.4 0 21.7 21.7 0 23.1 1.4 2.8 21.7 23.1 42 21.7 43.4'/></svg>");
+        background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 23.1 43.4'><polygon fill='#fff' points='21.7 43.4 0 21.7 21.7 0 23.1 1.4 2.8 21.7 23.1 42 21.7 43.4'/></svg>");
     }
 
     .flex-next {
         right: $st-gutter;
-        background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 23.1 43.4'><polygon points='1.4 0 23.1 21.7 1.4 43.4 0 42 20.3 21.7 0 1.4 1.4 0'/></svg>");
+        background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 23.1 43.4'><polygon fill='#fff' points='1.4 0 23.1 21.7 1.4 43.4 0 42 20.3 21.7 0 1.4 1.4 0'/></svg>");
     }
 }

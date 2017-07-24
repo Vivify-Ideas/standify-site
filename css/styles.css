@@ -1,3 +1,19 @@
+.tictail_add_to_cart_button {
+  position: relative;
+  z-index: 2;
+  padding: 1rem;
+  color: #333;
+  font-size: 1.4rem;
+  font-family: 'sanfrancisco-heavy';
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 2px solid #333;
+  transition: all .2s ease-in-out; }
+  .tictail_add_to_cart_button:hover, .tictail_add_to_cart_button:focus, .tictail_add_to_cart_button:active {
+    color: #fff;
+    text-shadow: none;
+    background-color: #333; }
+
 * {
   margin: 0;
   padding: 0;
@@ -52,6 +68,21 @@ a {
   font-family: 'sanfrancisco-heavy';
   src: url("https://vivify-ideas.github.io/standify-site/fonts/SanFranciscoDisplay-Heavy.woff2") format("woff2"), url("https://vivify-ideas.github.io/standify-site/fonts/SanFranciscoDisplay-Heavy.woff") format("woff");
   font-style: normal; }
+/** Ultra Light */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 100;
+  src: url("https://vivify-ideas.github.io/standify-site/fonts/sanfranciscodisplay-ultralight-webfont.woff"); }
+/** Thin */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 200;
+  src: url("https://vivify-ideas.github.io/standify-site/fonts/sanfranciscodisplay-thin-webfont.woff"); }
+/** Regular */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://vivify-ideas.github.io/standify-site/fonts/sanfranciscodisplay-regular-webfont.woff"); }
 .st-u-text--right {
   text-align: right; }
 
@@ -60,6 +91,9 @@ a {
 
 .st-u-gap--top-xl {
   margin-top: 5rem; }
+
+.st-u-gap--bottom {
+  margin-top: 1rem; }
 
 .st-c-container {
   max-width: 70em;
@@ -127,12 +161,12 @@ a {
   .st-c-section--hero .st-c-section__header {
     padding: 2rem;
     text-align: center;
-    background-color: #fff; }
+    background-color: rgba(255, 255, 255, 0.75); }
     @media (min-width: 768px) {
       .st-c-section--hero .st-c-section__header {
         position: absolute;
         top: 50%;
-        left: 1rem;
+        right: 1rem;
         transform: translateY(-50%);
         width: 23rem;
         text-align: right; } }
@@ -191,6 +225,7 @@ a {
   fill: currentColor; }
 
 .st-c-btn {
+  display: inline-block;
   padding: 0.5rem 1rem;
   color: #333;
   font-size: 1rem;
@@ -284,6 +319,12 @@ textarea.st-c-form-control {
 .st-c-product__price {
   font-size: 2rem; }
 
+.price_tag {
+  font-family: "San Francisco";
+  font-weight: 400; }
+  .price_tag > span {
+    font-weight: 100; }
+
 .st-l-site-header {
   display: flex;
   align-items: stretch;
@@ -320,7 +361,8 @@ textarea.st-c-form-control {
     transform: translateY(-50%);
     width: 3rem;
     height: 3rem;
-    background-color: #fff;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 50%;
     background-repeat: no-repeat;
     background-position: center center;
@@ -329,9 +371,9 @@ textarea.st-c-form-control {
     text-indent: -100%; }
   .flex-direction-nav .flex-prev {
     left: 1rem;
-    background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 23.1 43.4'><polygon points='21.7 43.4 0 21.7 21.7 0 23.1 1.4 2.8 21.7 23.1 42 21.7 43.4'/></svg>"); }
+    background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 23.1 43.4'><polygon fill='#fff' points='21.7 43.4 0 21.7 21.7 0 23.1 1.4 2.8 21.7 23.1 42 21.7 43.4'/></svg>"); }
   .flex-direction-nav .flex-next {
     right: 1rem;
-    background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 23.1 43.4'><polygon points='1.4 0 23.1 21.7 1.4 43.4 0 42 20.3 21.7 0 1.4 1.4 0'/></svg>"); }
+    background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 23.1 43.4'><polygon fill='#fff' points='1.4 0 23.1 21.7 1.4 43.4 0 42 20.3 21.7 0 1.4 1.4 0'/></svg>"); }
 
 /*# sourceMappingURL=styles.css.map */
