@@ -115,27 +115,23 @@ a {
     font-style: normal;
 }
 
-/** Ultra Light */
 @font-face {
   font-family: "San Francisco";
   font-weight: 100;
   src: url("https://vivify-ideas.github.io/standify-site/fonts/sanfranciscodisplay-ultralight-webfont.woff");
 }
 
-/** Thin */
 @font-face {
   font-family: "San Francisco";
   font-weight: 200;
   src: url("https://vivify-ideas.github.io/standify-site/fonts/sanfranciscodisplay-thin-webfont.woff");
 }
 
-/** Regular */
 @font-face {
   font-family: "San Francisco";
   font-weight: 400;
   src: url("https://vivify-ideas.github.io/standify-site/fonts/sanfranciscodisplay-regular-webfont.woff");
 }
-
 
 .st-u-text--right {
     text-align: right;
@@ -151,6 +147,10 @@ a {
 
 .st-u-gap--bottom {
     margin-top: $st-gutter;
+}
+
+.st-u-gap--bottom-lg {
+    margin-bottom: $st-gutter-lg;
 }
 
 .st-c-container {
@@ -428,6 +428,11 @@ textarea {
 .st-c-product__gallery {
     position: relative;
     flex-grow: 1;
+    flex: 0 0 55%;
+
+    @media (max-width: $st-screen-sm) {
+        flex: 0 0 auto;
+    }
 
     .st-c-controls {
         position: absolute;
@@ -449,11 +454,12 @@ textarea {
 }
 
 .st-c-product__info {
-    max-width: 28rem;
-    padding: $st-gutter-lg;
+    flex: 0 0 45%;
+    padding: $st-gutter-lg 0 0 $st-gutter-lg;
 
     @media (max-width: $st-screen-sm) {
         max-width: 100%;
+        flex: 0 0 auto;
     }
 
     strong {

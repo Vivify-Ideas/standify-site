@@ -68,17 +68,14 @@ a {
   font-family: 'sanfrancisco-heavy';
   src: url("https://vivify-ideas.github.io/standify-site/fonts/SanFranciscoDisplay-Heavy.woff2") format("woff2"), url("https://vivify-ideas.github.io/standify-site/fonts/SanFranciscoDisplay-Heavy.woff") format("woff");
   font-style: normal; }
-/** Ultra Light */
 @font-face {
   font-family: "San Francisco";
   font-weight: 100;
   src: url("https://vivify-ideas.github.io/standify-site/fonts/sanfranciscodisplay-ultralight-webfont.woff"); }
-/** Thin */
 @font-face {
   font-family: "San Francisco";
   font-weight: 200;
   src: url("https://vivify-ideas.github.io/standify-site/fonts/sanfranciscodisplay-thin-webfont.woff"); }
-/** Regular */
 @font-face {
   font-family: "San Francisco";
   font-weight: 400;
@@ -94,6 +91,9 @@ a {
 
 .st-u-gap--bottom {
   margin-top: 1rem; }
+
+.st-u-gap--bottom-lg {
+  margin-bottom: 2rem; }
 
 .st-c-container {
   max-width: 70em;
@@ -295,7 +295,11 @@ textarea.st-c-form-control {
 
 .st-c-product__gallery {
   position: relative;
-  flex-grow: 1; }
+  flex-grow: 1;
+  flex: 0 0 55%; }
+  @media (max-width: 768px) {
+    .st-c-product__gallery {
+      flex: 0 0 auto; } }
   .st-c-product__gallery .st-c-controls {
     position: absolute;
     top: 50%;
@@ -308,11 +312,12 @@ textarea.st-c-form-control {
     width: 100%; }
 
 .st-c-product__info {
-  max-width: 28rem;
-  padding: 2rem; }
+  flex: 0 0 45%;
+  padding: 2rem 0 0 2rem; }
   @media (max-width: 768px) {
     .st-c-product__info {
-      max-width: 100%; } }
+      max-width: 100%;
+      flex: 0 0 auto; } }
   .st-c-product__info strong {
     font-weight: bold; }
 
